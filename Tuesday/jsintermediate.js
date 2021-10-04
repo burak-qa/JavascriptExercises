@@ -11,8 +11,8 @@ console.log(sum)
 // Or 
 
 function sumOfNumbers(number){
-    let a = 3
-    let b = 5
+    const a = 3
+    const b = 5
     let sum = 0;
     for(let i = 200; i <= number; i++){
         if((i % a === 0 || i % b === 0) && (i % (a * b)) !== 0){
@@ -26,3 +26,9 @@ console.log(sumOfNumbers(2700));
 
 /* 2. Shift the Values
 Given any array X, for example [2,1,6,4,-7], create an algorithm that shifts each number by one to the front. When your program is done the output for array [2,1,6,4,-7] should be [-7,4,6,1,2]. */
+
+// Or---
+let z = [2, 1, 6, 4, -7];
+let [a, b, c, d, e] = z;
+z= [e, d, c, b, a];
+console.log(z);
