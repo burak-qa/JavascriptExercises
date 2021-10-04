@@ -27,8 +27,16 @@ console.log(sumOfNumbers(2700));
 /* 2. Shift the Values
 Given any array X, for example [2,1,6,4,-7], create an algorithm that shifts each number by one to the front. When your program is done the output for array [2,1,6,4,-7] should be [-7,4,6,1,2]. */
 
+
+let y = [2,1,6,4,-7];
+let reverseY = y.reverse()
+console.log(reverseY);
+console.log(y);
+
 // Or---
 let z = [2, 1, 6, 4, -7];
 let [a, b, c, d, e] = z;
 z= [e, d, c, b, a];
 console.log(z);
+
+// ----------------------------------------------------------------------------------------
