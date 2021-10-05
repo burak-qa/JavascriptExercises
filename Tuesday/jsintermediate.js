@@ -11,12 +11,12 @@ console.log(sum)
 // Or 
 
 function sumOfNumbers(number){
-    const a = 3
-    const b = 5
+    let a = 3
+    let b = 5
     let sum = 0;
     for(let i = 200; i <= number; i++){
         if((i % a === 0 || i % b === 0) && (i % (a * b)) !== 0){
-            sum +=i;
+            sum += i;
         }
     }
     return sum;
@@ -29,14 +29,47 @@ Given any array X, for example [2,1,6,4,-7], create an algorithm that shifts eac
 
 
 let y = [2,1,6,4,-7];
-let reverseY = y.reverse()
-console.log(reverseY);
-console.log(y);
+let reverseY = y.reverse();
+console.log(reverseY); //output: [-7, 4, 6, 1, 2]
+console.log(y); //output: [-7, 4, 6, 1, 2]
 
-// Or---
+// Or; we don’t have to mutate the original array; we can create a copy of the array and then reverse it.
+
+let numbers = [2,1,6,4,-7];
+let reverseNumbers = [...numbers].reverse();
+console.log(reverseNumbers); //output: [-7, 4, 6, 1, 2]
+console.log(numbers); //output: [2,1,6,4,-7]
+
+// Or;
 let z = [2, 1, 6, 4, -7];
 let [a, b, c, d, e] = z;
 z= [e, d, c, b, a];
-console.log(z);
+console.log(z); //output: [-7, 4, 6, 1, 2]
 
 // ----------------------------------------------------------------------------------------
+
+/* let accessAllowed;
+let age = prompt('How old are you?', '');
+
+if(age>18){
+    accessAllowed = true;
+} else {
+    accessAllowed = false;
+};
+alert(accessAllowed); */
+
+/* 3. FizzBuzz
+Create an algorithm that inserts the numbers from 1 to 135 into an array, while replacing the values that are divisible by 3 with the word "Fizz", the numbers that are divisible by 5 with the word "Buzz", and the numbers that are divisible with 3 and 5 with the word "FizzBuzz". Your output should look like [1,2,'Fizz',4,'Buzz',5,'Fizz',7,8,...] */
+let my_array = [];
+for (let i = 1; i <= 135; i++){
+    if (i % 3 === 0 && i % 15 !== 0){
+        my_array.push('Fizz');
+    }else if (i % 5 === 0 && i % 15 !==0){
+        my_array.push('Buzz');
+    }else if (i % 15 === 0){
+        my_array.push('FizzBuzz');
+    }else{
+        my_array.push(i);
+    }
+}
+console.log(my_array);
